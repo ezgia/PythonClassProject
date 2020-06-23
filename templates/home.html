@@ -6,18 +6,340 @@
 	</head>
 	<body>
 						<!-- As a link -->
-		<nav class="navbar navbar-light bg-light">
-		  <a class="navbar-brand" href="#">WorldBank Country Information</a>
-		</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">World Bank Financial Development Indicators</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="POST">
+      <input class="form-control mr-sm-2" type="text" name="country" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">Search</button>
+    </form>
+  </div>
+</nav>
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="jumbotron">
 					  <h1 class="display-4"> <!-- importance -->
 							Hello!
+              <img src="https://www.countryflags.io/US/flat/64.png">
+              <img src="https://www.countryflags.io/GB/flat/64.png">
+              <img src="https://www.countryflags.io/FR/flat/64.png">
+              <img src="https://www.countryflags.io/CN/flat/64.png">
+              <img src="https://www.countryflags.io/BR/flat/64.png">
+              <img src="https://www.countryflags.io/KE/flat/64.png">
 						</h1>
-					  <p class="lead">This page will provide you with financial development information for specific countries. Please enter a country code to the website route (e.g. 127.0.0.1.5000/USA.html) to view their financial development indicators.</p>
-					</div>
+					  <p class="lead">This page will provide you with GDP per capita for the country of your choosing. Please enter a 3-letter country code, either to the Search bar on the upper right corner, or to the website route (e.g. /USA.html, /USA.json, /USA.csv) to view information about a country. </p>
+            <p class="lead">
+            You can view the list of 3-letter country codes accepted by this website below:
+            </p>
+            <h2><!-- importance -->
+              List of Country Codes:
+            </h2>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for countries...">
+            <table id="myTable" class="table table-hover" style="margin-left:auto;margin-right:auto;">
+            <td style="text-align:center">
+              <tr>
+              <th style="text-align:center">Country</th>
+              <th style="text-align:center">Code</th>
+              </tr>
+<tr><td style="text-align:center">Afghanistan</td><td style="text-align:center">AFG</td></tr>
+<tr><td style="text-align:center">Albania</td><td style="text-align:center">ALB</td></tr>
+<tr><td style="text-align:center">Algeria</td><td style="text-align:center">DZA</td></tr>
+<tr><td style="text-align:center">American Samoa</td><td style="text-align:center">ASM</td></tr>
+<tr><td style="text-align:center">Andorra</td><td style="text-align:center">AND</td></tr>
+<tr><td style="text-align:center">Angola</td><td style="text-align:center">AGO</td></tr>
+<tr><td style="text-align:center">Anguila</td><td style="text-align:center">AIA</td></tr>
+<tr><td style="text-align:center">Antigua and Barbuda</td><td style="text-align:center">ATG</td></tr>
+<tr><td style="text-align:center">Argentina</td><td style="text-align:center">ARG</td></tr>
+<tr><td style="text-align:center">Armenia</td><td style="text-align:center">ARM</td></tr>
+<tr><td style="text-align:center">Aruba</td><td style="text-align:center">ABW</td></tr>
+<tr><td style="text-align:center">Australia</td><td style="text-align:center">AUS</td></tr>
+<tr><td style="text-align:center">Austria</td><td style="text-align:center">AUT</td></tr>
+<tr><td style="text-align:center">Azerbaijan</td><td style="text-align:center">AZE</td></tr>
+<tr><td style="text-align:center">Bahamas, The</td><td style="text-align:center">BHS</td></tr>
+<tr><td style="text-align:center">Bahrain</td><td style="text-align:center">BHR</td></tr>
+<tr><td style="text-align:center">Bangladesh</td><td style="text-align:center">BGD</td></tr>
+<tr><td style="text-align:center">Barbados</td><td style="text-align:center">BRB</td></tr>
+<tr><td style="text-align:center">Belarus</td><td style="text-align:center">BLR</td></tr>
+<tr><td style="text-align:center">Belgium</td><td style="text-align:center">BEL</td></tr>
+<tr><td style="text-align:center">Belgium-Luxembourg</td><td style="text-align:center">BLX</td></tr>
+<tr><td style="text-align:center">Belize</td><td style="text-align:center">BLZ</td></tr>
+<tr><td style="text-align:center">Benin</td><td style="text-align:center">BEN</td></tr>
+<tr><td style="text-align:center">Bermuda</td><td style="text-align:center">BMU</td></tr>
+<tr><td style="text-align:center">Bhutan</td><td style="text-align:center">BTN</td></tr>
+<tr><td style="text-align:center">Bolivia</td><td style="text-align:center">BOL</td></tr>
+<tr><td style="text-align:center">Bosnia and Herzegovina</td><td style="text-align:center">BIH</td></tr>
+<tr><td style="text-align:center">Botswana</td><td style="text-align:center">BWA</td></tr>
+<tr><td style="text-align:center">Br. Antr. Terr</td><td style="text-align:center">BAT</td></tr>
+<tr><td style="text-align:center">Brazil</td><td style="text-align:center">BRA</td></tr>
+<tr><td style="text-align:center">British Indian Ocean Ter.</td><td style="text-align:center">IOT</td></tr>
+<tr><td style="text-align:center">British Virgin Islands</td><td style="text-align:center">VGB</td></tr>
+<tr><td style="text-align:center">Brunei</td><td style="text-align:center">BRN</td></tr>
+<tr><td style="text-align:center">Bulgaria</td><td style="text-align:center">BGR</td></tr>
+<tr><td style="text-align:center">Burkina Faso</td><td style="text-align:center">BFA</td></tr>
+<tr><td style="text-align:center">Burundi</td><td style="text-align:center">BDI</td></tr>
+<tr><td style="text-align:center">Cambodia</td><td style="text-align:center">KHM</td></tr>
+<tr><td style="text-align:center">Cameroon</td><td style="text-align:center">CMR</td></tr>
+<tr><td style="text-align:center">Canada</td><td style="text-align:center">CAN</td></tr>
+<tr><td style="text-align:center">Cape Verde</td><td style="text-align:center">CPV</td></tr>
+<tr><td style="text-align:center">Cayman Islands</td><td style="text-align:center">CYM</td></tr>
+<tr><td style="text-align:center">Central African Republic</td><td style="text-align:center">CAF</td></tr>
+<tr><td style="text-align:center">Chad</td><td style="text-align:center">TCD</td></tr>
+<tr><td style="text-align:center">Chile</td><td style="text-align:center">CHL</td></tr>
+<tr><td style="text-align:center">China</td><td style="text-align:center">CHN</td></tr>
+<tr><td style="text-align:center">Christmas Island</td><td style="text-align:center">CXR</td></tr>
+<tr><td style="text-align:center">Cocos (Keeling) Islands</td><td style="text-align:center">CCK</td></tr>
+<tr><td style="text-align:center">Colombia</td><td style="text-align:center">COL</td></tr>
+<tr><td style="text-align:center">Comoros</td><td style="text-align:center">COM</td></tr>
+<tr><td style="text-align:center">Congo, Dem. Rep.</td><td style="text-align:center">ZAR</td></tr>
+<tr><td style="text-align:center">Congo, Rep.</td><td style="text-align:center">COG</td></tr>
+<tr><td style="text-align:center">Cook Islands</td><td style="text-align:center">COK</td></tr>
+<tr><td style="text-align:center">Costa Rica</td><td style="text-align:center">CRI</td></tr>
+<tr><td style="text-align:center">Cote d'Ivoire</td><td style="text-align:center">CIV</td></tr>
+<tr><td style="text-align:center">Croatia</td><td style="text-align:center">HRV</td></tr>
+<tr><td style="text-align:center">Cuba</td><td style="text-align:center">CUB</td></tr>
+<tr><td style="text-align:center">Cyprus</td><td style="text-align:center">CYP</td></tr>
+<tr><td style="text-align:center">Czech Republic</td><td style="text-align:center">CZE</td></tr>
+<tr><td style="text-align:center">Czechoslovakia</td><td style="text-align:center">CSK</td></tr>
+<tr><td style="text-align:center">Denmark</td><td style="text-align:center">DNK</td></tr>
+<tr><td style="text-align:center">Djibouti</td><td style="text-align:center">DJI</td></tr>
+<tr><td style="text-align:center">Dominica</td><td style="text-align:center">DMA</td></tr>
+<tr><td style="text-align:center">Dominican Republic</td><td style="text-align:center">DOM</td></tr>
+<tr><td style="text-align:center">East Timor</td><td style="text-align:center">TMP</td></tr>
+<tr><td style="text-align:center">Ecuador</td><td style="text-align:center">ECU</td></tr>
+<tr><td style="text-align:center">Egypt, Arab Rep.</td><td style="text-align:center">EGY</td></tr>
+<tr><td style="text-align:center">El Salvador</td><td style="text-align:center">SLV</td></tr>
+<tr><td style="text-align:center">Equatorial Guinea</td><td style="text-align:center">GNQ</td></tr>
+<tr><td style="text-align:center">Eritrea</td><td style="text-align:center">ERI</td></tr>
+<tr><td style="text-align:center">Estonia</td><td style="text-align:center">EST</td></tr>
+<tr><td style="text-align:center">Ethiopia (excludes Eritrea)</td><td style="text-align:center">ETH</td></tr>
+<tr><td style="text-align:center">Ethiopia (includes Eritrea)</td><td style="text-align:center">ETF</td></tr>
+<tr><td style="text-align:center">European Union</td><td style="text-align:center">EUN</td></tr>
+<tr><td style="text-align:center">Faeroe Islands</td><td style="text-align:center">FRO</td></tr>
+<tr><td style="text-align:center">Falkland Island</td><td style="text-align:center">FLK</td></tr>
+<tr><td style="text-align:center">Fiji</td><td style="text-align:center">FJI</td></tr>
+<tr><td style="text-align:center">Finland</td><td style="text-align:center">FIN</td></tr>
+<tr><td style="text-align:center">Fm Panama Cz</td><td style="text-align:center">PCZ</td></tr>
+<tr><td style="text-align:center">Fm Rhod Nyas</td><td style="text-align:center">ZW1</td></tr>
+<tr><td style="text-align:center">Fm Tanganyik</td><td style="text-align:center">TAN</td></tr>
+<tr><td style="text-align:center">Fm Vietnam Dr</td><td style="text-align:center">VDR</td></tr>
+<tr><td style="text-align:center">Fm Vietnam Rp</td><td style="text-align:center">SVR</td></tr>
+<tr><td style="text-align:center">Fm Zanz-Pemb</td><td style="text-align:center">ZPM</td></tr>
+<tr><td style="text-align:center">Fr. So. Ant. Tr</td><td style="text-align:center">ATF</td></tr>
+<tr><td style="text-align:center">France</td><td style="text-align:center">FRA</td></tr>
+<tr><td style="text-align:center">Free Zones</td><td style="text-align:center">FRE</td></tr>
+<tr><td style="text-align:center">French Guiana</td><td style="text-align:center">GUF</td></tr>
+<tr><td style="text-align:center">French Polynesia</td><td style="text-align:center">PYF</td></tr>
+<tr><td style="text-align:center">Gabon</td><td style="text-align:center">GAB</td></tr>
+<tr><td style="text-align:center">Gambia, The</td><td style="text-align:center">GMB</td></tr>
+<tr><td style="text-align:center">Gaza Strip</td><td style="text-align:center">GAZ</td></tr>
+<tr><td style="text-align:center">Georgia</td><td style="text-align:center">GEO</td></tr>
+<tr><td style="text-align:center">German Democratic Republic</td><td style="text-align:center">DDR</td></tr>
+<tr><td style="text-align:center">Germany</td><td style="text-align:center">DEU</td></tr>
+<tr><td style="text-align:center">Ghana</td><td style="text-align:center">GHA</td></tr>
+<tr><td style="text-align:center">Gibraltar</td><td style="text-align:center">GIB</td></tr>
+<tr><td style="text-align:center">Greece</td><td style="text-align:center">GRC</td></tr>
+<tr><td style="text-align:center">Greenland</td><td style="text-align:center">GRL</td></tr>
+<tr><td style="text-align:center">Grenada</td><td style="text-align:center">GRD</td></tr>
+<tr><td style="text-align:center">Guadeloupe</td><td style="text-align:center">GLP</td></tr>
+<tr><td style="text-align:center">Guam</td><td style="text-align:center">GUM</td></tr>
+<tr><td style="text-align:center">Guatemala</td><td style="text-align:center">GTM</td></tr>
+<tr><td style="text-align:center">Guinea</td><td style="text-align:center">GIN</td></tr>
+<tr><td style="text-align:center">Guinea-Bissau</td><td style="text-align:center">GNB</td></tr>
+<tr><td style="text-align:center">Guyana</td><td style="text-align:center">GUY</td></tr>
+<tr><td style="text-align:center">Haiti</td><td style="text-align:center">HTI</td></tr>
+<tr><td style="text-align:center">Holy See</td><td style="text-align:center">VAT</td></tr>
+<tr><td style="text-align:center">Honduras</td><td style="text-align:center">HND</td></tr>
+<tr><td style="text-align:center">Hong Kong, China</td><td style="text-align:center">HKG</td></tr>
+<tr><td style="text-align:center">Hungary</td><td style="text-align:center">HUN</td></tr>
+<tr><td style="text-align:center">Iceland</td><td style="text-align:center">ISL</td></tr>
+<tr><td style="text-align:center">India</td><td style="text-align:center">IND</td></tr>
+<tr><td style="text-align:center">Indonesia</td><td style="text-align:center">IDN</td></tr>
+<tr><td style="text-align:center">Iran, Islamic Rep.</td><td style="text-align:center">IRN</td></tr>
+<tr><td style="text-align:center">Iraq</td><td style="text-align:center">IRQ</td></tr>
+<tr><td style="text-align:center">Ireland</td><td style="text-align:center">IRL</td></tr>
+<tr><td style="text-align:center">Israel</td><td style="text-align:center">ISR</td></tr>
+<tr><td style="text-align:center">Italy</td><td style="text-align:center">ITA</td></tr>
+<tr><td style="text-align:center">Jamaica</td><td style="text-align:center">JAM</td></tr>
+<tr><td style="text-align:center">Japan</td><td style="text-align:center">JPN</td></tr>
+<tr><td style="text-align:center">Jhonston Island</td><td style="text-align:center">JTN</td></tr>
+<tr><td style="text-align:center">Jordan</td><td style="text-align:center">JOR</td></tr>
+<tr><td style="text-align:center">Kazakhstan</td><td style="text-align:center">KAZ</td></tr>
+<tr><td style="text-align:center">Kenya</td><td style="text-align:center">KEN</td></tr>
+<tr><td style="text-align:center">Kiribati</td><td style="text-align:center">KIR</td></tr>
+<tr><td style="text-align:center">Korea, Dem. Rep.</td><td style="text-align:center">PRK</td></tr>
+<tr><td style="text-align:center">Korea, Rep.</td><td style="text-align:center">KOR</td></tr>
+<tr><td style="text-align:center">Kuwait</td><td style="text-align:center">KWT</td></tr>
+<tr><td style="text-align:center">Kyrgyz Republic</td><td style="text-align:center">KGZ</td></tr>
+<tr><td style="text-align:center">Lao PDR</td><td style="text-align:center">LAO</td></tr>
+<tr><td style="text-align:center">Latvia</td><td style="text-align:center">LVA</td></tr>
+<tr><td style="text-align:center">Lebanon</td><td style="text-align:center">LBN</td></tr>
+<tr><td style="text-align:center">Lesotho</td><td style="text-align:center">LSO</td></tr>
+<tr><td style="text-align:center">Liberia</td><td style="text-align:center">LBR</td></tr>
+<tr><td style="text-align:center">Libya</td><td style="text-align:center">LBY</td></tr>
+<tr><td style="text-align:center">Liechtenstein</td><td style="text-align:center">LIE</td></tr>
+<tr><td style="text-align:center">Lithuania</td><td style="text-align:center">LTU</td></tr>
+<tr><td style="text-align:center">Luxembourg</td><td style="text-align:center">LUX</td></tr>
+<tr><td style="text-align:center">Macao</td><td style="text-align:center">MAC</td></tr>
+<tr><td style="text-align:center">Macedonia, FYR</td><td style="text-align:center">MKD</td></tr>
+<tr><td style="text-align:center">Madagascar</td><td style="text-align:center">MDG</td></tr>
+<tr><td style="text-align:center">Malawi</td><td style="text-align:center">MWI</td></tr>
+<tr><td style="text-align:center">Malaysia</td><td style="text-align:center">MYS</td></tr>
+<tr><td style="text-align:center">Maldives</td><td style="text-align:center">MDV</td></tr>
+<tr><td style="text-align:center">Mali</td><td style="text-align:center">MLI</td></tr>
+<tr><td style="text-align:center">Malta</td><td style="text-align:center">MLT</td></tr>
+<tr><td style="text-align:center">Marshall Islands</td><td style="text-align:center">MHL</td></tr>
+<tr><td style="text-align:center">Martinique</td><td style="text-align:center">MTQ</td></tr>
+<tr><td style="text-align:center">Mauritania</td><td style="text-align:center">MRT</td></tr>
+<tr><td style="text-align:center">Mauritius</td><td style="text-align:center">MUS</td></tr>
+<tr><td style="text-align:center">Mexico</td><td style="text-align:center">MEX</td></tr>
+<tr><td style="text-align:center">Micronesia, Fed. Sts.</td><td style="text-align:center">FSM</td></tr>
+<tr><td style="text-align:center">Midway Islands</td><td style="text-align:center">MID</td></tr>
+<tr><td style="text-align:center">Moldova</td><td style="text-align:center">MDA</td></tr>
+<tr><td style="text-align:center">Monaco</td><td style="text-align:center">MCO</td></tr>
+<tr><td style="text-align:center">Mongolia</td><td style="text-align:center">MNG</td></tr>
+<tr><td style="text-align:center">Montserrat</td><td style="text-align:center">MSR</td></tr>
+<tr><td style="text-align:center">Morocco</td><td style="text-align:center">MAR</td></tr>
+<tr><td style="text-align:center">Mozambique</td><td style="text-align:center">MOZ</td></tr>
+<tr><td style="text-align:center">Myanmar</td><td style="text-align:center">MMR</td></tr>
+<tr><td style="text-align:center">Namibia</td><td style="text-align:center">NAM</td></tr>
+<tr><td style="text-align:center">Nauru</td><td style="text-align:center">NRU</td></tr>
+<tr><td style="text-align:center">Nepal</td><td style="text-align:center">NPL</td></tr>
+<tr><td style="text-align:center">Netherlands</td><td style="text-align:center">NLD</td></tr>
+<tr><td style="text-align:center">Netherlands Antilles</td><td style="text-align:center">ANT</td></tr>
+<tr><td style="text-align:center">Neutral Zone</td><td style="text-align:center">NZE</td></tr>
+<tr><td style="text-align:center">New Caledonia</td><td style="text-align:center">NCL</td></tr>
+<tr><td style="text-align:center">New Zealand</td><td style="text-align:center">NZL</td></tr>
+<tr><td style="text-align:center">Nicaragua</td><td style="text-align:center">NIC</td></tr>
+<tr><td style="text-align:center">Niger</td><td style="text-align:center">NER</td></tr>
+<tr><td style="text-align:center">Nigeria</td><td style="text-align:center">NGA</td></tr>
+<tr><td style="text-align:center">Niue</td><td style="text-align:center">NIU</td></tr>
+<tr><td style="text-align:center">Norfolk Island</td><td style="text-align:center">NFK</td></tr>
+<tr><td style="text-align:center">Northern Mariana Islands</td><td style="text-align:center">MNP</td></tr>
+<tr><td style="text-align:center">Norway</td><td style="text-align:center">NOR</td></tr>
+<tr><td style="text-align:center">Oman</td><td style="text-align:center">OMN</td></tr>
+<tr><td style="text-align:center">Pacific Islands</td><td style="text-align:center">PCE</td></tr>
+<tr><td style="text-align:center">Pakistan</td><td style="text-align:center">PAK</td></tr>
+<tr><td style="text-align:center">Palau</td><td style="text-align:center">PLW</td></tr>
+<tr><td style="text-align:center">Panama</td><td style="text-align:center">PAN</td></tr>
+<tr><td style="text-align:center">Papua New Guinea</td><td style="text-align:center">PNG</td></tr>
+<tr><td style="text-align:center">Paraguay</td><td style="text-align:center">PRY</td></tr>
+<tr><td style="text-align:center">Pen Malaysia</td><td style="text-align:center">PMY</td></tr>
+<tr><td style="text-align:center">Peru</td><td style="text-align:center">PER</td></tr>
+<tr><td style="text-align:center">Philippines</td><td style="text-align:center">PHL</td></tr>
+<tr><td style="text-align:center">Pitcairn</td><td style="text-align:center">PCN</td></tr>
+<tr><td style="text-align:center">Poland</td><td style="text-align:center">POL</td></tr>
+<tr><td style="text-align:center">Portugal</td><td style="text-align:center">PRT</td></tr>
+<tr><td style="text-align:center">Puerto Rico</td><td style="text-align:center">PRI</td></tr>
+<tr><td style="text-align:center">Qatar</td><td style="text-align:center">QAT</td></tr>
+<tr><td style="text-align:center">Reunion</td><td style="text-align:center">REU</td></tr>
+<tr><td style="text-align:center">Romania</td><td style="text-align:center">ROM</td></tr>
+<tr><td style="text-align:center">Russian Federation</td><td style="text-align:center">RUS</td></tr>
+<tr><td style="text-align:center">Rwanda</td><td style="text-align:center">RWA</td></tr>
+<tr><td style="text-align:center">Ryukyu Is</td><td style="text-align:center">RYU</td></tr>
+<tr><td style="text-align:center">Sabah</td><td style="text-align:center">SBH</td></tr>
+<tr><td style="text-align:center">Saint Helena</td><td style="text-align:center">SHN</td></tr>
+<tr><td style="text-align:center">Saint Kitts-Nevis-Anguilla-Aruba</td><td style="text-align:center">KN1</td></tr>
+<tr><td style="text-align:center">Saint Pierre and Miquelon</td><td style="text-align:center">SPM</td></tr>
+<tr><td style="text-align:center">Samoa</td><td style="text-align:center">WSM</td></tr>
+<tr><td style="text-align:center">San Marino</td><td style="text-align:center">SMR</td></tr>
+<tr><td style="text-align:center">Sao Tome and Principe</td><td style="text-align:center">STP</td></tr>
+<tr><td style="text-align:center">Sarawak</td><td style="text-align:center">SWK</td></tr>
+<tr><td style="text-align:center">Saudi Arabia</td><td style="text-align:center">SAU</td></tr>
+<tr><td style="text-align:center">Senegal</td><td style="text-align:center">SEN</td></tr>
+<tr><td style="text-align:center">Seychelles</td><td style="text-align:center">SYC</td></tr>
+<tr><td style="text-align:center">Sierra Leone</td><td style="text-align:center">SLE</td></tr>
+<tr><td style="text-align:center">SIKKIM</td><td style="text-align:center">SIK</td></tr>
+<tr><td style="text-align:center">Singapore</td><td style="text-align:center">SGP</td></tr>
+<tr><td style="text-align:center">Slovak Republic</td><td style="text-align:center">SVK</td></tr>
+<tr><td style="text-align:center">Slovenia</td><td style="text-align:center">SVN</td></tr>
+<tr><td style="text-align:center">Solomon Islands</td><td style="text-align:center">SLB</td></tr>
+<tr><td style="text-align:center">Somalia</td><td style="text-align:center">SOM</td></tr>
+<tr><td style="text-align:center">South Africa</td><td style="text-align:center">ZAF</td></tr>
+<tr><td style="text-align:center">Soviet Union</td><td style="text-align:center">SVU</td></tr>
+<tr><td style="text-align:center">Spain</td><td style="text-align:center">ESP</td></tr>
+<tr><td style="text-align:center">Special Categories</td><td style="text-align:center">SPE</td></tr>
+<tr><td style="text-align:center">Sri Lanka</td><td style="text-align:center">LKA</td></tr>
+<tr><td style="text-align:center">St. Kitts and Nevis</td><td style="text-align:center">KNA</td></tr>
+<tr><td style="text-align:center">St. Lucia</td><td style="text-align:center">LCA</td></tr>
+<tr><td style="text-align:center">St. Vincent and the Grenadines</td><td style="text-align:center">VCT</td></tr>
+<tr><td style="text-align:center">Sudan</td><td style="text-align:center">SDN</td></tr>
+<tr><td style="text-align:center">Suriname</td><td style="text-align:center">SUR</td></tr>
+<tr><td style="text-align:center">Svalbard and Jan Mayen Is</td><td style="text-align:center">SJM</td></tr>
+<tr><td style="text-align:center">Swaziland</td><td style="text-align:center">SWZ</td></tr>
+<tr><td style="text-align:center">Sweden</td><td style="text-align:center">SWE</td></tr>
+<tr><td style="text-align:center">Switzerland</td><td style="text-align:center">CHE</td></tr>
+<tr><td style="text-align:center">Syrian Arab Republic</td><td style="text-align:center">SYR</td></tr>
+<tr><td style="text-align:center">Taiwan</td><td style="text-align:center">TWN</td></tr>
+<tr><td style="text-align:center">Tajikistan</td><td style="text-align:center">TJK</td></tr>
+<tr><td style="text-align:center">Tanzania</td><td style="text-align:center">TZA</td></tr>
+<tr><td style="text-align:center">Thailand</td><td style="text-align:center">THA</td></tr>
+<tr><td style="text-align:center">Togo</td><td style="text-align:center">TGO</td></tr>
+<tr><td style="text-align:center">Tokelau</td><td style="text-align:center">TKL</td></tr>
+<tr><td style="text-align:center">Tonga</td><td style="text-align:center">TON</td></tr>
+<tr><td style="text-align:center">Trinidad and Tobago</td><td style="text-align:center">TTO</td></tr>
+<tr><td style="text-align:center">Tunisia</td><td style="text-align:center">TUN</td></tr>
+<tr><td style="text-align:center">Turkey</td><td style="text-align:center">TUR</td></tr>
+<tr><td style="text-align:center">Turkmenistan</td><td style="text-align:center">TKM</td></tr>
+<tr><td style="text-align:center">Turks and Caicos Isl.</td><td style="text-align:center">TCA</td></tr>
+<tr><td style="text-align:center">Tuvalu</td><td style="text-align:center">TUV</td></tr>
+<tr><td style="text-align:center">Uganda</td><td style="text-align:center">UGA</td></tr>
+<tr><td style="text-align:center">Ukraine</td><td style="text-align:center">UKR</td></tr>
+<tr><td style="text-align:center">United Arab Emirates</td><td style="text-align:center">ARE</td></tr>
+<tr><td style="text-align:center">United Kingdom</td><td style="text-align:center">GBR</td></tr>
+<tr><td style="text-align:center">United States</td><td style="text-align:center">USA</td></tr>
+<tr><td style="text-align:center">Unspecified</td><td style="text-align:center">UNS</td></tr>
+<tr><td style="text-align:center">Uruguay</td><td style="text-align:center">URY</td></tr>
+<tr><td style="text-align:center">Us Msc.Pac.I</td><td style="text-align:center">USP</td></tr>
+<tr><td style="text-align:center">Uzbekistan</td><td style="text-align:center">UZB</td></tr>
+<tr><td style="text-align:center">Vanuatu</td><td style="text-align:center">VUT</td></tr>
+<tr><td style="text-align:center">Venezuela</td><td style="text-align:center">VEN</td></tr>
+<tr><td style="text-align:center">Vietnam</td><td style="text-align:center">VNM</td></tr>
+<tr><td style="text-align:center">Virgin Islands (U.S.)</td><td style="text-align:center">VIR</td></tr>
+<tr><td style="text-align:center">Wake Island</td><td style="text-align:center">WAK</td></tr>
+<tr><td style="text-align:center">Wallis and Futura Isl.</td><td style="text-align:center">WLF</td></tr>
+<tr><td style="text-align:center">Western Sahara</td><td style="text-align:center">ESH</td></tr>
+<tr><td style="text-align:center">World</td><td style="text-align:center">WLD</td></tr>
+<tr><td style="text-align:center">Yemen Democratic</td><td style="text-align:center">YDR</td></tr>
+<tr><td style="text-align:center">Yemen, Rep.</td><td style="text-align:center">YEM</td></tr>
+<tr><td style="text-align:center">Yugoslavia</td><td style="text-align:center">SER</td></tr>
+<tr><td style="text-align:center">Zambia</td><td style="text-align:center">ZMB</td></tr>
+<tr><td style="text-align:center">Zimbabwe</td><td style="text-align:center">ZWE</td></tr>
+            </td>
+          </table>
+            <script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+          </div>
 				</div>
   			</div><!-- row -->
   		</div><!-- container -->

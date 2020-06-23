@@ -4,26 +4,56 @@
 		<!-- CSS only -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">World Bank Financial Development Indicators</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="POST">
+      <input class="form-control mr-sm-2" type="text" name="country" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search">Search</button>
+    </form>
+  </div>
+</nav>
 	<body>
 						<!-- As a link -->
 		<nav class="navbar navbar-light bg-light">
-		  <a class="navbar-brand" href="#">WorldBank Country Information: {{country_param}}</a>
+		  <a class="navbar-brand" href="#"><u>WorldBank Country Information:</u> {{country_name}}</a>
+		  <img src="https://www.countryflags.io/{{flagcode}}/flat/64.png">
 		</nav>
-		<div class="container">
+		<div class="container" style="background-color:#f8f9fa">
 			<div class="row">
 				<div class="col">
-					<div class="jumbotron">
-					  <h1 class="display-4" style="text-align:center"> <!-- importance -->
-							{{country_param}}
-						</h1>
-						<p class="lead"> 
-						</p>
+					  <h2 style="text-align:center"> <!-- importance -->
+							{{country_name}} 
+						</h2>
+					{% if yoy_change < 0 %}
+					<div class="alert alert-danger">
+					 Latest YoY change for {{country_name}} was {{yoy_change_str}}.
+					</div>
+					{% else %}
+					{% if yoy_change == 0 %}
+					<div class="alert alert-secondary">
+					 Latest YoY change for {{country_name}} is not available.
+					</div>
+					{% else %}
+					<div class="alert alert-success">
+					 Latest YoY change for {{country_name}} was {{yoy_change_str}}.
+					</div>
+					{% endif %}
+					{% endif %}
 					<table style="margin-left:auto;margin-right:auto;">
 						<td style="text-align:center">
 							{{country_gdp | safe}}
 						</td>
 					</table>
-					</div>
 				</div>
   			</div><!-- row -->
   		</div><!-- container -->

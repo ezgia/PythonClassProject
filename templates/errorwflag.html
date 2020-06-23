@@ -24,11 +24,15 @@
     </form>
   </div>
 </nav>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">WorldBank Country Information: {{country_param}}</a>
+      <img src="https://www.countryflags.io/{{flagcode}}/flat/64.png">
+    </nav>
 		<div class="container">
   			<div class="row">
   				<div class="col">
 					<div class="alert alert-danger" role="alert">
-					 We couldn't find results for this country code. Please enter a valid country code.
+					 Unfortunately the API server currently cannot be reached. Please try again later.
 					</div>
 				</div>
 			</div>
