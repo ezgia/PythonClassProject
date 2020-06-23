@@ -20,7 +20,7 @@ app = Flask(__name__)
 def get_country_gdp(country):
 	country_gdp = wbdata.api.get_data("NY.GDP.PCAP.CD", country=country, data_date=(datetime.date(2009,1,1), datetime.date(2018,1,1)), convert_date=False, pandas=False, column_name='GDP per Capita', keep_levels=False)
 	country_gdp = wbdata.api.convert_to_dataframe(country_gdp, "GDP per capita (USD)")
-	country_gdp['GDP per capita (USD)'] = round(country_gdp['GDP per capita (USD)'], 2)
+	country_gdp['GDP per capita (USD)'] = round(country_gdp['GDP per capita (USD)'], 0)
 	country_gdp = country_gdp.drop(columns="country")
 	country_gdp.set_index(country_gdp['date'], drop=True, append=False, inplace=True, verify_integrity=False)
 	country_gdp = country_gdp.drop(columns="date")
@@ -45,15 +45,17 @@ def home():
 def country_info(country_param):
 	try:
 		country_gdp = get_country_gdp(country_param).to_html(classes="table", border=0, justify="center")
+		yoy_change = get_yoy_change(country_param)
+		yoy_change_str = str(yoy_change)+"%"
 		flagcode = flagcodes.ISO2dict[country_param]
 		country_name = flagcodes.ISOcountryname[country_param]
-		return render_template("countrypage.html", country_param=country_param, country_gdp=country_gdp, flagcode=flagcode, country_name = country_name)
+		return render_template("countrypage.html", yoy_change=yoy_change, yoy_change_str=yoy_change_str, country_param=country_param, country_gdp=country_gdp, flagcode=flagcode, country_name = country_name)
 	except:
 		if country_param in flagcodes.ISO2dict.keys():
 			flagcode = flagcodes.ISO2dict[country_param]
-			return render_template("errorwflag.html", country_param = country_param, flagcode=flagcode) #error page that loads when API cannot be loaded
+			return render_template("errorwflag.html", country_param = country_param, flagcode=flagcode) #error page that is served when API connection is unavailable
 		else:
-			return render_template("error.html") #error page that loads when user enters an invalid country code
+			return render_template("error.html") #error page that is served when user enters an invalid country code
 
 #country info page in JSON
 @app.route('/<country_param>.json')
