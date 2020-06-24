@@ -11,4 +11,4 @@ from datetime import datetime
 
 if __name__ == '__main__':
 	indicators = wbdata.get_indicator(source=32)
-	print(*indicators, sep = "\n")
+	print(*indicators, sep = "\n") 
