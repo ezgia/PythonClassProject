@@ -16,3 +16,8 @@ Enter resulting local host address into your web browser.
 
 Follow directions on the homepage; enter country codes to either the Search bar on the navigation pane, or the host route (e.g. for United States of America: /USA.html, /USA.json, or /USA.csv) to access information about a country. If you enter the wrong country code, an error page will appear instead.
 
+## APIs used:
+
+The following two public APIs are used to create this website's content:
+1. World Bank, via wbdata python interface: https://wbdata.readthedocs.io/en/stable/
+2. Country Flags: https://www.countryflags.io/
