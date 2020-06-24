@@ -1,4 +1,4 @@
-# World Bank Financial Indicators
+# World Bank Financial Development Indicators
 
 World Bank Financial Indicators is a Flask web application that retrieves financial health indicator, GDP per capita (USD), for countries based on World Bank database, utilizing the wbdata library of Python.
 
