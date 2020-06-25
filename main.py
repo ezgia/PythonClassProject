@@ -13,6 +13,13 @@ from flask import (
 
 import datetime #import date-time functions to fulfill wbdata parameters
 
+import requests
+
+import json
+
+API_BASE = "https://www.mapbox.com/pk.eyJ1IjoiZXpnaWEiLCJhIjoiY2tidTVjN3YxMDB0MTJ5bGQyY3Q5OGJjaSJ9.kKH2fgIziAx7_mkZjTcnrg"
+resource = 'styles/v1/ezgia/satellite-v9.html'
+r = requests.get(f"{API_BASE}/{resource}")
 app = Flask(__name__)
 
 	
